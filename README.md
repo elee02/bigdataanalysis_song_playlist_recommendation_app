@@ -1,5 +1,14 @@
 # Spotify Song & Playlist Recommendation Engine
 
+## 📺 Demo Video
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=_sonBs3rjo4">
+    <img src="https://img.youtube.com/vi/_sonBs3rjo4/maxresdefault.jpg" alt="Spotify recommendation engine demo video" style="border-radius: 10px;">
+    <p><b>Click to watch the full project walkthrough and demonstration</b></p>
+  </a>
+</div>
+
 A powerful, incredibly fast MERN stack application built to provide Spotify song recommendations based on word2vec embeddings. This project was developed to satisfy the NoSQL and MongoDB requirements for Big Data Analysis.
 
 ## Core Architectural Decision
