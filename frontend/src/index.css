@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+:root {
+  --color-bg-base: #121212;
+  --color-bg-elevated: #181818;
+  --color-bg-highlight: #282828;
+  --color-green-primary: #1DB954;
+  --color-green-hover: #1ed760;
+  --color-text-base: #FFFFFF;
+  --color-text-subdued: #a7a7a7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-base);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+header span.green {
+  color: var(--color-green-primary);
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* PANELS */
+.panel {
+  background-color: var(--color-bg-elevated);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panel h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* SEARCH */
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--color-bg-highlight);
+  color: var(--color-text-base);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.search-input:focus {
+  background-color: #333333;
+}
+
+/* LISTS */
+.scrollable-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.scrollable-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg-highlight);
+  border-radius: 4px;
+}
+
+.song-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.song-item:hover {
+  background-color: var(--color-bg-highlight);
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title {
+  font-weight: 600;
+  color: var(--color-text-base);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.song-artist {
+  color: var(--color-text-subdued);
+  font-size: 0.85rem;
+}
+
+/* BUTTONS */
+.btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-subdued);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  color: var(--color-text-base);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--color-green-primary);
+  color: #000;
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  width: stretch;
+  margin-top: 1rem;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-green-hover);
+  transform: scale(1.02);
+  color: #000;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background-color: var(--color-bg-highlight);
+  color: var(--color-text-subdued);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ANIMATIONS */
+.loader {
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top: 3px solid var(--color-green-primary);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--color-text-subdued);
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Small adjustments */
+.score-badge {
+  background: rgba(29, 185, 84, 0.2);
+  color: var(--color-green-primary);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+}
